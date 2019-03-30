@@ -1,4 +1,4 @@
-4import time,os
+import time,os
 
 def suma(x,y):
 	fin=x+y
