@@ -1,0 +1,60 @@
+4import time,os
+
+def suma(x,y):
+	fin=x+y
+	return fin
+
+def rest(x,y):
+	fin=x-y
+	return fin
+
+def mult(x,y):
+	fin=x*y
+	return fin
+
+def division(x,y):
+	fin=x/y
+	return fin
+
+def exp(x,y):
+	fin=x**y
+	return fin
+
+oper={'1':suma,'2':rest,'3':mult,'4':division,'5':exp}
+
+
+while True:
+    print("\n               Operaciones\n\n 1.Suma\n\n 2.Resta\n\n 3.Multiplicación\n\n 4.División\n\n 5.Exponencial\n\n 0.Salir\n")
+
+    try:
+        var=input("Elige una operación: ")
+
+        #Se mira la elección escogida
+        if var=='0':
+            print("Hasta pronto")
+            break
+        if var in oper:
+            x = float(input("Primera variable: "))
+            y = float(input("Segunda variable: "))
+            result = oper[var](x, y)
+            print("El resultado de la operación es:" + "{0:.2f}".format(result))
+            time.sleep(4)
+            os.system("cls")
+        else:
+            print("Debes introducir una opción valida")
+            time.sleep(1)
+            os.system("cls")
+            continue
+
+    except ValueError:
+        print("No pude convertir el dato a un float.")
+        time.sleep(1)
+        os.system("cls")
+    except ZeroDivisionError:
+        print("No se puede dividir un número por 0.")
+        time.sleep(1)
+        os.system("cls")
+    except:
+        print("Ocurrió algún error")
+        time.sleep(1)
+        os.system("cls")
